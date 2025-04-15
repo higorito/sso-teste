@@ -37,7 +37,7 @@ def sso():
 
     payload = {
         "sub": "121213",
-        "email": "uiz.thiago@dacta.tec.br",
+        "email": "luiz.thiago@dacta.tec.br",
         "given_name": "Luiz",
         "family_name": "Thiago",
         "iat": int(time.time()),
