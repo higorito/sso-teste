@@ -36,10 +36,10 @@ def sso():
         return "Missing state or nonce", 400
 
     payload = {
-        "sub": "123",
-        "email": "higor.pereira@dacta.tec.br",
-        "given_name": "Higor",
-        "family_name": "Silva",
+        "sub": "121213",
+        "email": "uiz.thiago@dacta.tec.br",
+        "given_name": "Luiz",
+        "family_name": "Thiago",
         "iat": int(time.time()),
         "nonce": nonce,
         "company": "rmview"
