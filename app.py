@@ -24,3 +24,6 @@ def login():
 
     redirect_url = f"https://rmview-org.myfreshworks.com/sp/OIDC/832315941349708585/implicit?id_token={token}&state=abc123"
     return redirect(redirect_url)
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
