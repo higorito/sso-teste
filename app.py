@@ -35,6 +35,8 @@ def sso():
     if not state or not nonce:
         return "Missing state or nonce", 400
 
+    user_type = "contact"
+
     payload = {
         "sub": "121213",
         "email": "luiz.thiago@dacta.tec.br",
@@ -42,7 +44,8 @@ def sso():
         "family_name": "Thiago",
         "iat": int(time.time()),
         "nonce": nonce,
-        "company": "rmview"
+        "company": "rmview",
+        "user_type": user_type,
     }
 
     token = jwt.encode(
@@ -51,10 +54,16 @@ def sso():
         algorithm="RS256"
     )
 
-    redirect_url = f"https://{FRESHDESK_DOMAIN}/sp/OIDC/{CLIENT_ID}/implicit?" + urlencode({
-        "state": state,
-        "id_token": token
-    })
+    if user_type == 'admin':
+        redirect_url = f"https://rmview-org.myfreshworks.com/sp/OIDC/{CLIENT_ID}/implicit?" + urlencode({
+            "state": state,
+            "id_token": token
+        })
+    else:  # Para contatos
+        redirect_url = f"https://suportermview.freshdesk.com/sp/OIDC/{CLIENT_ID}/implicit?" + urlencode({
+            "state": state,
+            "id_token": token
+        })
     
     print(f"Redirecting to: {redirect_url}")
 
