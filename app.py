@@ -6,7 +6,8 @@ from urllib.parse import urlencode
 
 app = Flask(__name__)
 
-FRESHDESK_DOMAIN = "suportermview.freshdesk.com"
+FRESHDESK_DOMAIN = "rmview-org.myfreshworks.com"
+
 CLIENT_ID = "832315941349708585"
 PRIVATE_KEY = """
 -----BEGIN RSA PRIVATE KEY-----
