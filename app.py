@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 FRESHDESK_DOMAIN = "rmview-org.myfreshworks.com"
 
-CLIENT_ID = "832315941349708585"
+CLIENT_ID = "832352753658967768"
 PRIVATE_KEY = """
 -----BEGIN RSA PRIVATE KEY-----
 MIICWgIBAAKBgH2EM6SEnkf85RJLpTi6qKcehrGOh0a+l8VHv5shsrwcMJxHRHsi
