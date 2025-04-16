@@ -1,4 +1,4 @@
-flask
-pyjwt
-gunicorn
-cryptography
+fastapi
+uvicorn
+python-dotenv
+requests
